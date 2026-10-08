@@ -1,0 +1,8 @@
+{
+  "name": "+200 Mapas Visuais de Panificação",
+  "description": "Massas, fermentação, sova, modelagem e forno: Panificação fácil de entender",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

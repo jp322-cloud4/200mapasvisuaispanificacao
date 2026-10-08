@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+/* Estilo dos Botões CTA com o Verde Vibrante */
+.btn-cta-vibrant {
+  background-color: #00a838;
+  color: #ffffff;
+  font-weight: 800;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-cta-vibrant:hover {
+  background-color: #009230;
+  box-shadow: 0 10px 25px -5px rgba(0, 168, 56, 0.4), 0 8px 10px -6px rgba(0, 168, 56, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-cta-vibrant:active {
+  background-color: #007f2a;
+  transform: translateY(1px) scale(0.99);
+}
+

